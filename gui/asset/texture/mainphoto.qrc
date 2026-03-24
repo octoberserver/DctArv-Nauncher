@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file alias="a">mainphoto-1.png</file>
+        <file alias="b">mainmenubackground.png</file>
     </qresource>
 </RCC>
