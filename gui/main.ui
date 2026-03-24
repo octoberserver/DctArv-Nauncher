@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>600</height>
+    <width>1280</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,6 +21,33 @@
 	background-image:url(:/b);
     background-repeat: no-repeat;
     background-position: center;
+}
+
+QPushButton {
+    background-color: rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: white;
+}
+
+/* 滑鼠移上去變亮 */
+QPushButton:hover {
+   /* background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);*/
+/* 1. 稍微改變外邊距，讓它往上推 */
+    margin-top: 0px;
+    margin-bottom: 4px; /* 原本可能是 margin: 2px，這裡縮小頂部增大底部 */
+    
+    /* 2. 同時增加背景亮度 */
+    background-color: rgba(255, 255, 255, 0.2);
+    
+    /* 3. 強化邊框，模擬邊緣反光 */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* 按下去的瞬間變暗，模擬物理回饋 */
+QPushButton:pressed {
+    background-color: rgba(0, 0, 0, 0.2);
 }</string>
   </property>
   <property name="tabShape">
@@ -30,10 +57,10 @@
    <widget class="QFrame" name="photo">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>100</y>
-      <width>670</width>
-      <height>330</height>
+      <x>79</x>
+      <y>110</y>
+      <width>771</width>
+      <height>401</height>
      </rect>
     </property>
     <property name="mouseTracking">
@@ -67,10 +94,10 @@
    <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>90</y>
-      <width>271</width>
-      <height>341</height>
+      <x>900</x>
+      <y>100</y>
+      <width>321</width>
+      <height>421</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -140,8 +167,8 @@ QLabel {
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>271</width>
-       <height>341</height>
+       <width>321</width>
+       <height>421</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
@@ -172,8 +199,8 @@ QLabel {
         <widget class="QPushButton" name="pushButton">
          <property name="geometry">
           <rect>
-           <x>150</x>
-           <y>290</y>
+           <x>210</x>
+           <y>370</y>
            <width>82</width>
            <height>26</height>
           </rect>
@@ -187,7 +214,7 @@ QLabel {
           <rect>
            <x>20</x>
            <y>50</y>
-           <width>211</width>
+           <width>261</width>
            <height>31</height>
           </rect>
          </property>
@@ -219,9 +246,9 @@ QLabel {
          <widget class="QLabel" name="date">
           <property name="geometry">
            <rect>
-            <x>140</x>
+            <x>200</x>
             <y>10</y>
-            <width>91</width>
+            <width>61</width>
             <height>20</height>
            </rect>
           </property>
@@ -234,6 +261,238 @@ QLabel {
       </item>
      </layout>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>620</y>
+      <width>261</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>530</y>
+      <width>261</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="LauncherSetting">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>620</y>
+      <width>261</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>15</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#LauncherSetting {
+	background-color: rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 12px;
+    padding: 10px;
+	text-align: right;
+}
+
+#LauncherSetting:hover {
+    background-color: rgba(255, 255, 255, 0.25); 
+    border: 2px solid rgba(255, 255, 255, 0.6); 
+    padding: 9px;
+}</string>
+    </property>
+    <property name="text">
+     <string>啟動器設定          </string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ChangeSkin">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>530</y>
+      <width>261</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#ChangeSkin {
+	background-color: rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 12px;
+    padding: 10px;
+	text-align: right;
+}
+
+#ChangeSkin:hover {
+    background-color: rgba(255, 255, 255, 0.25); 
+    border: 2px solid rgba(255, 255, 255, 0.6); 
+    padding: 9px;
+}</string>
+    </property>
+    <property name="text">
+     <string>更換皮膚(Coming Soon)  </string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="LaunchGame">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>530</y>
+      <width>291</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體 Light</family>
+      <pointsize>20</pointsize>
+      <bold>true</bold>
+      <stylestrategy>PreferDefault</stylestrategy>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* 針對公告欄或按鈕的懸停狀態 */
+#LaunchGame {
+background-color: rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    border-radius: 12px;
+    padding: 10px;
+	text-align: right;
+}
+
+#LaunchGame:hover {
+    background-color: rgba(255, 255, 255, 0.25); 
+    border: 2px solid rgba(255, 255, 255, 0.6); 
+    padding: 9px;
+}</string>
+    </property>
+    <property name="text">
+     <string>伺服器選單     </string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="DCLink">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>620</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#DCLink {
+	border-image:url(:/c);
+    background-color: rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 35px;
+    color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="YTLink">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>530</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#YTLink {
+	border-image:url(:/g);
+    background-color: rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 35px;
+    color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="OfficialWebLink">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>530</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#OfficialWebLink {
+	border-image:url(:/f);
+    background-color: rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 35px;
+    color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="GitHubLink">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>620</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#GitHubLink {
+	border-image:url(:/e);
+    background-color: rgba(255, 255, 255, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 35px;
+    color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
