@@ -1,9 +1,9 @@
 <RCC>
     <qresource prefix="/">
-        <file alias="a">mainphoto-1.png</file>
-        <file alias="b">mainmenubackground.png</file>
         <file alias="c">discord.jpg</file>
         <file alias="e">github.png</file>
+        <file alias="b">mainmenubackground.png</file>
+        <file alias="a">mainphoto-1.png</file>
         <file alias="f">october-green.jpg</file>
         <file alias="g">YouTube.png</file>
     </qresource>

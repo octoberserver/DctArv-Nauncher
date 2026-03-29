@@ -17,8 +17,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QMainWindow, QPushButton, QScrollArea, QSizePolicy,
-    QStatusBar, QTabWidget, QWidget)
-import mainphoto_rc
+    QTabWidget, QVBoxLayout, QWidget)
+import asset.texture.mainphoto_rc
 
 class Ui_mainwindow(object):
     def setupUi(self, mainwindow):
@@ -64,11 +64,12 @@ class Ui_mainwindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.photo = QFrame(self.centralwidget)
         self.photo.setObjectName(u"photo")
-        self.photo.setGeometry(QRect(79, 110, 771, 401))
+        self.photo.setGeometry(QRect(40, 110, 771, 401))
         self.photo.setMouseTracking(False)
         self.photo.setStyleSheet(u"#photo {\n"
 "    /* 1. \u8a2d\u5b9a\u80cc\u666f\u5716\u7247\u8def\u5f91 (\u958b\u982d\u4e00\u5b9a\u8981\u6709\u5192\u865f) */\n"
 "   border-image: url(:/a);\n"
+"	border: none;\n"
 "\n"
 "    /* 2. \u8a2d\u5b9a\u5716\u7247\u4e0d\u91cd\u8907 */\n"
 "    background-repeat: no-repeat;\n"
@@ -162,20 +163,24 @@ class Ui_mainwindow(object):
         self.pushButton.setGeometry(QRect(210, 370, 82, 26))
         self.frame = QFrame(self.background)
         self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(20, 50, 261, 31))
+        self.frame.setGeometry(QRect(20, 50, 261, 311))
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.annou_2 = QLabel(self.frame)
         self.annou_2.setObjectName(u"annou_2")
-        self.annou_2.setGeometry(QRect(10, 10, 91, 20))
+        self.annou_2.setGeometry(QRect(10, 10, 241, 31))
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.annou_2.sizePolicy().hasHeightForWidth())
         self.annou_2.setSizePolicy(sizePolicy)
+        font = QFont()
+        font.setFamilies([u"Microsoft JhengHei"])
+        font.setKerning(False)
+        self.annou_2.setFont(font)
         self.date = QLabel(self.frame)
         self.date.setObjectName(u"date")
-        self.date.setGeometry(QRect(200, 10, 61, 20))
+        self.date.setGeometry(QRect(200, 290, 61, 20))
 
         self.horizontalLayout.addWidget(self.background)
 
@@ -189,11 +194,11 @@ class Ui_mainwindow(object):
         self.LauncherSetting = QPushButton(self.centralwidget)
         self.LauncherSetting.setObjectName(u"LauncherSetting")
         self.LauncherSetting.setGeometry(QRect(640, 620, 261, 71))
-        font = QFont()
-        font.setFamilies([u"\u5fae\u8edf\u6b63\u9ed1\u9ad4"])
-        font.setPointSize(15)
-        font.setBold(True)
-        self.LauncherSetting.setFont(font)
+        font1 = QFont()
+        font1.setFamilies([u"\u5fae\u8edf\u6b63\u9ed1\u9ad4"])
+        font1.setPointSize(15)
+        font1.setBold(True)
+        self.LauncherSetting.setFont(font1)
         self.LauncherSetting.setMouseTracking(True)
         self.LauncherSetting.setStyleSheet(u"#LauncherSetting {\n"
 "	background-color: rgba(255, 255, 255, 0.1); \n"
@@ -211,9 +216,9 @@ class Ui_mainwindow(object):
         self.ChangeSkin = QPushButton(self.centralwidget)
         self.ChangeSkin.setObjectName(u"ChangeSkin")
         self.ChangeSkin.setGeometry(QRect(640, 530, 261, 71))
-        font1 = QFont()
-        font1.setPointSize(15)
-        self.ChangeSkin.setFont(font1)
+        font2 = QFont()
+        font2.setPointSize(15)
+        self.ChangeSkin.setFont(font2)
         self.ChangeSkin.setMouseTracking(True)
         self.ChangeSkin.setStyleSheet(u"#ChangeSkin {\n"
 "	background-color: rgba(255, 255, 255, 0.1); \n"
@@ -231,13 +236,13 @@ class Ui_mainwindow(object):
         self.LaunchGame = QPushButton(self.centralwidget)
         self.LaunchGame.setObjectName(u"LaunchGame")
         self.LaunchGame.setGeometry(QRect(920, 530, 291, 161))
-        font2 = QFont()
-        font2.setFamilies([u"\u5fae\u8edf\u6b63\u9ed1\u9ad4 Light"])
-        font2.setPointSize(20)
-        font2.setBold(True)
-        font2.setKerning(True)
-        font2.setStyleStrategy(QFont.PreferDefault)
-        self.LaunchGame.setFont(font2)
+        font3 = QFont()
+        font3.setFamilies([u"\u5fae\u8edf\u6b63\u9ed1\u9ad4 Light"])
+        font3.setPointSize(20)
+        font3.setBold(True)
+        font3.setKerning(True)
+        font3.setStyleStrategy(QFont.PreferDefault)
+        self.LaunchGame.setFont(font3)
         self.LaunchGame.setCursor(QCursor(Qt.CursorShape.ArrowCursor))
         self.LaunchGame.setMouseTracking(True)
         self.LaunchGame.setStyleSheet(u"/* \u91dd\u5c0d\u516c\u544a\u6b04\u6216\u6309\u9215\u7684\u61f8\u505c\u72c0\u614b */\n"
@@ -257,6 +262,7 @@ class Ui_mainwindow(object):
         self.DCLink = QPushButton(self.centralwidget)
         self.DCLink.setObjectName(u"DCLink")
         self.DCLink.setGeometry(QRect(90, 620, 71, 71))
+        self.DCLink.setMouseTracking(True)
         self.DCLink.setStyleSheet(u"#DCLink {\n"
 "	border-image:url(:/c);\n"
 "    background-color: rgba(255, 255, 255, 0.1); \n"
@@ -267,6 +273,7 @@ class Ui_mainwindow(object):
         self.YTLink = QPushButton(self.centralwidget)
         self.YTLink.setObjectName(u"YTLink")
         self.YTLink.setGeometry(QRect(90, 530, 71, 71))
+        self.YTLink.setMouseTracking(True)
         self.YTLink.setStyleSheet(u"#YTLink {\n"
 "	border-image:url(:/g);\n"
 "    background-color: rgba(255, 255, 255, 0.1); \n"
@@ -277,6 +284,7 @@ class Ui_mainwindow(object):
         self.OfficialWebLink = QPushButton(self.centralwidget)
         self.OfficialWebLink.setObjectName(u"OfficialWebLink")
         self.OfficialWebLink.setGeometry(QRect(180, 530, 71, 71))
+        self.OfficialWebLink.setMouseTracking(True)
         self.OfficialWebLink.setStyleSheet(u"#OfficialWebLink {\n"
 "	border-image:url(:/f);\n"
 "    background-color: rgba(255, 255, 255, 0.1); \n"
@@ -287,6 +295,7 @@ class Ui_mainwindow(object):
         self.GitHubLink = QPushButton(self.centralwidget)
         self.GitHubLink.setObjectName(u"GitHubLink")
         self.GitHubLink.setGeometry(QRect(180, 620, 71, 71))
+        self.GitHubLink.setMouseTracking(True)
         self.GitHubLink.setStyleSheet(u"#GitHubLink {\n"
 "	border-image:url(:/e);\n"
 "    background-color: rgba(255, 255, 255, 0.1); \n"
@@ -294,10 +303,42 @@ class Ui_mainwindow(object):
 "    border-radius: 35px;\n"
 "    color: white;\n"
 "}")
+        self.top = QFrame(self.centralwidget)
+        self.top.setObjectName(u"top")
+        self.top.setGeometry(QRect(20, 9, 1241, 91))
+        self.top.setStyleSheet(u"#top {\n"
+"	background-color: rgba(255, 0, 0, 127);\n"
+"    /* 4. \u8a2d\u5b9a\u5713\u89d2 (\u9019\u5c31\u662f\u4f60\u8981\u7684\u73fe\u4ee3\u611f) */\n"
+"    border-radius: 35px;\n"
+"\n"
+"    /* 5. \u9078\u64c7\u6027\uff1a\u52a0\u4e0a\u908a\u6846\u8b93\u5361\u7247\u66f4\u660e\u986f */\n"
+"    border: 1px solid #2d2f45;\n"
+"}")
+        self.top.setFrameShape(QFrame.Shape.StyledPanel)
+        self.top.setFrameShadow(QFrame.Shadow.Raised)
+        self.pushButton_2 = QPushButton(self.top)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.pushButton_2.setGeometry(QRect(1020, 20, 171, 51))
+        self.AccountMenu = QFrame(self.centralwidget)
+        self.AccountMenu.setObjectName(u"AccountMenu")
+        self.AccountMenu.setGeometry(QRect(1040, 90, 171, 391))
+        self.AccountMenu.setFrameShape(QFrame.Shape.StyledPanel)
+        self.AccountMenu.setFrameShadow(QFrame.Shadow.Raised)
+        self.verticalLayout = QVBoxLayout(self.AccountMenu)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.label = QLabel(self.AccountMenu)
+        self.label.setObjectName(u"label")
+
+        self.verticalLayout.addWidget(self.label)
+
+        self.frame_2 = QFrame(self.AccountMenu)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setFrameShape(QFrame.Shape.HLine)
+        self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
+
+        self.verticalLayout.addWidget(self.frame_2)
+
         mainwindow.setCentralWidget(self.centralwidget)
-        self.statusBar = QStatusBar(mainwindow)
-        self.statusBar.setObjectName(u"statusBar")
-        mainwindow.setStatusBar(self.statusBar)
 
         self.retranslateUi(mainwindow)
 
@@ -319,5 +360,7 @@ class Ui_mainwindow(object):
         self.YTLink.setText("")
         self.OfficialWebLink.setText("")
         self.GitHubLink.setText("")
+        self.pushButton_2.setText(QCoreApplication.translate("mainwindow", u"accountname", None))
+        self.label.setText(QCoreApplication.translate("mainwindow", u"\u9078\u64c7\u5e33\u865f", None))
     # retranslateUi
 
